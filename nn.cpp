@@ -314,6 +314,7 @@ void TestForward()
   }
   cout << endl;
   cout << "Sum Squared Error for Testing cases   = " << TotalError << endl;
+  cout << "# of Testing Cases that meet criteria = " << GoodCount << "\n";
   cout << "% of Testing Cases that meet criteria = " <<
               ((double)GoodCount/(double)TestCases);
   cout << endl;
@@ -360,6 +361,7 @@ void TrainForward()
   }
   cout << endl;
   cout << "Sum Squared Error for Training cases   = " << TotalError << endl;
+  cout << "# of Training Cases that meet criteria = " << GoodCount << "\n";
   cout << "% of Training Cases that meet criteria = " <<
               ((double)GoodCount/(double)TrainCases) << endl;
   cout << endl;
