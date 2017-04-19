@@ -35,8 +35,10 @@ using namespace std;
 #define NumNodes4    0       /*                                 */
 #define NumNodes5    0       /* note: layers include bias node  */
 #define NumNodes6    0
-#define TrainFile    "BeamA.dat"  /* file containing training data */
-#define TestFile     "BeamB.dat"   /* file containing testing data  */
+//#define TrainFile    "BeamA.dat"  /* file containing training data */
+//#define TestFile     "BeamB.dat"   /* file containing testing data  */
+#define TrainFile    "training1.dat"  /* file containing training data */
+#define TestFile     "testing1.dat"   /* file containing testing data  */
 
 int NumRowsPer[NumOfRows];  /* number of rows used in each column incl. bias */
                             /* note - bias is not included on output layer   */
