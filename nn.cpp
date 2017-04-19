@@ -18,20 +18,20 @@ using namespace std;
 
 #define NumOfCols    3       /* number of layers +1  i.e, include input layer */
 #define NumOfRows    5       /* max number of rows net +1, last is bias node  */
-#define NumINs       4       /* number of inputs, not including bias node     */
-#define NumOUTs      1       /* number of outputs, not including bias node    */
+#define NumINs       2       /* number of inputs, not including bias node     */
+#define NumOUTs      3       /* number of outputs, not including bias node    */
 #define LearningRate 0.2     /* most books suggest 0.3                        */
 #define Criteria     0.005   /* all outputs must be within this to terminate  */
 #define TestCriteria 0.1     /* all outputs must be within this to generalize */
 #define MaxIterate   100000  /* maximum number of iterations                */
 #define ReportIntv   101     /* print report every time this many cases done*/
 #define Momentum     0.9     /* momentum constant                             */
-#define TrainCases   10      /* number of training cases        */
-#define TestCases    6       /* number of test cases            */
+#define TrainCases   35      /* number of training cases        */
+#define TestCases    10       /* number of test cases            */
 // network topology by column ------------------------------------
-#define NumNodes1    5       /* col 1 - must equal NumINs+1     */
-#define NumNodes2    5       /* col 2 - hidden layer 1, etc.    */
-#define NumNodes3    1       /* output layer must equal NumOUTs */
+#define NumNodes1    3       /* col 1 - must equal NumINs+1     */
+#define NumNodes2    3       /* col 2 - hidden layer 1, etc.    */
+#define NumNodes3    3       /* output layer must equal NumOUTs */
 #define NumNodes4    0       /*                                 */
 #define NumNodes5    0       /* note: layers include bias node  */
 #define NumNodes6    0
