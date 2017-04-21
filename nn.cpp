@@ -17,7 +17,7 @@
 using namespace std;
 
 #define NumOfCols    3       /* number of layers +1  i.e, include input layer */
-#define NumOfRows    5       /* max number of rows net +1, last is bias node  */
+#define NumOfRows    40       /* max number of rows net +1, last is bias node  */
 #define NumINs       2       /* number of inputs, not including bias node     */
 #define NumOUTs      3       /* number of outputs, not including bias node    */
 #define LearningRate 0.2     /* most books suggest 0.3                        */
@@ -30,7 +30,7 @@ using namespace std;
 #define TestCases    10       /* number of test cases            */
 // network topology by column ------------------------------------
 #define NumNodes1    3       /* col 1 - must equal NumINs+1     */
-#define NumNodes2    3       /* col 2 - hidden layer 1, etc.    */
+#define NumNodes2    40       /* col 2 - hidden layer 1, etc.    */
 #define NumNodes3    3       /* output layer must equal NumOUTs */
 #define NumNodes4    0       /*                                 */
 #define NumNodes5    0       /* note: layers include bias node  */
