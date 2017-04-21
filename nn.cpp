@@ -17,11 +17,11 @@
 using namespace std;
 
 #define NumOfCols    5       /* number of layers +1  i.e, include input layer */
-#define NumOfRows    20       /* max number of rows net +1, last is bias node  */
+#define NumOfRows    40       /* max number of rows net +1, last is bias node  */
 #define NumINs       2       /* number of inputs, not including bias node     */
 #define NumOUTs      3       /* number of outputs, not including bias node    */
 #define LearningRate 0.5     /* most books suggest 0.3                        */
-#define Criteria     0.005   /* all outputs must be within this to terminate  */
+#define Criteria     0.006   /* all outputs must be within this to terminate  */
 #define TestCriteria 0.15     /* all outputs must be within this to generalize */
 #define MaxIterate   1000000  /* maximum number of iterations                */
 #define ReportIntv   101     /* print report every time this many cases done*/
@@ -30,9 +30,9 @@ using namespace std;
 #define TestCases    10       /* number of test cases            */
 // network topology by column ------------------------------------
 #define NumNodes1    3       /* col 1 - must equal NumINs+1     */
-#define NumNodes2    20       /* col 2 - hidden layer 1, etc.    */
-#define NumNodes3    20       /* output layer must equal NumOUTs */
-#define NumNodes4    20       /*                                 */
+#define NumNodes2    40       /* col 2 - hidden layer 1, etc.    */
+#define NumNodes3    40       /* output layer must equal NumOUTs */
+#define NumNodes4    40       /*                                 */
 #define NumNodes5    3       /* note: layers include bias node  */
 #define NumNodes6    0
 //#define TrainFile    "BeamA.dat"  /* file containing training data */
