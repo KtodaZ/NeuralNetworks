@@ -17,10 +17,10 @@
 using namespace std;
 
 #define NumOfCols    3       /* number of layers +1  i.e, include input layer */
-#define NumOfRows    40       /* max number of rows net +1, last is bias node  */
+#define NumOfRows    20       /* max number of rows net +1, last is bias node  */
 #define NumINs       2       /* number of inputs, not including bias node     */
 #define NumOUTs      3       /* number of outputs, not including bias node    */
-#define LearningRate 0.2     /* most books suggest 0.3                        */
+#define LearningRate 0.5     /* most books suggest 0.3                        */
 #define Criteria     0.005   /* all outputs must be within this to terminate  */
 #define TestCriteria 0.1     /* all outputs must be within this to generalize */
 #define MaxIterate   100000  /* maximum number of iterations                */
@@ -30,7 +30,7 @@ using namespace std;
 #define TestCases    10       /* number of test cases            */
 // network topology by column ------------------------------------
 #define NumNodes1    3       /* col 1 - must equal NumINs+1     */
-#define NumNodes2    40       /* col 2 - hidden layer 1, etc.    */
+#define NumNodes2    20       /* col 2 - hidden layer 1, etc.    */
 #define NumNodes3    3       /* output layer must equal NumOUTs */
 #define NumNodes4    0       /*                                 */
 #define NumNodes5    0       /* note: layers include bias node  */
@@ -307,8 +307,11 @@ void TestForward()
       CellArray[J][NumOfCols-1].Output = squashing(Sum);
       CellArray[J][NumOfCols-1].Error = 
         DesiredOutputs[J]-CellArray[J][NumOfCols-1].Output;
-      if (fabs(CellArray[J][NumOfCols-1].Error) <= ScaledTestCriteria[J])
-         GoodCount++;
+      if (fabs(CellArray[J][NumOfCols-1].Error) <= ScaledTestCriteria[J]) {
+        GoodCount++;
+        cout << "Good found for " << ScaleOutput(Inputs[J],J);
+        cout << endl;
+      }
       TotalError += CellArray[J][NumOfCols-1].Error *
                     CellArray[J][NumOfCols-1].Error;
     }
@@ -347,15 +350,20 @@ void TrainForward()
 
     /* output layer  */
     for (int J=0; J < NumOUTs; J++)
-    { Sum = 0.0;
+    { bool isGood = false;
+      Sum = 0.0;
       for (int K=0; K < NumRowsPer[NumOfCols-2]; K++)
         Sum += CellArray[J][NumOfCols-1].Weights[K]
              * CellArray[K][NumOfCols-2].Output;
       CellArray[J][NumOfCols-1].Output = squashing(Sum);
       CellArray[J][NumOfCols-1].Error =
         DesiredOutputs[J]-CellArray[J][NumOfCols-1].Output;
-      if (fabs(CellArray[J][NumOfCols-1].Error) <= ScaledCriteria[J])
-         GoodCount++;
+      if (fabs(CellArray[J][NumOfCols-1].Error) <= ScaledCriteria[J]) {
+        GoodCount++;
+        cout << "Good found for " << ScaleOutput(Inputs[J],J);
+        cout << endl;
+      }
+
       TotalError += CellArray[J][NumOfCols-1].Error *
                     CellArray[J][NumOfCols-1].Error;
     }
@@ -376,7 +384,10 @@ void FinReport(int CIterations)
 {
   cout.setf(ios::fixed); cout.setf(ios::showpoint); cout.precision(4);
   if (CIterations<CritrIt) cout << "Network did not converge" << endl;
-  else cout << "Converged to within criteria" << endl;
+  else {
+    cout << "Converged to within criteria" << endl;
+    exit(EXIT_SUCCESS); // TODO: Remove
+  }
   cout << "Total number of iterations = " << Iteration << endl;
 }
 
