@@ -22,7 +22,8 @@ using namespace std;
 #define NumOUTs      1       /* number of outputs, not including bias node    */
 #define LearningRate 0.5     /* most books suggest 0.3                        */
 #define Criteria     0.006   /* all outputs must be within this to terminate  */
-#define TestCriteria 0.15     /* all outputs must be within this to generalize */
+//#define TestCriteria 0.15     /* all outputs must be within this to generalize */
+#define TestCriteria 5     /* all outputs must be within this to generalize */
 #define MaxIterate   100000  /* maximum number of iterations                */
 #define ReportIntv   101     /* print report every time this many cases done*/
 #define Momentum     0.85     /* momentum constant                             */
