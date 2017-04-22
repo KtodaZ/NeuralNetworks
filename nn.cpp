@@ -17,12 +17,12 @@
 using namespace std;
 
 #define NumOfCols    5       /* number of layers +1  i.e, include input layer */
-#define NumOfRows    10       /* max number of rows net +1, last is bias node  */
+#define NumOfRows    10      /* max number of rows net +1, last is bias node  */
 #define NumINs       2       /* number of inputs, not including bias node     */
 #define NumOUTs      1       /* number of outputs, not including bias node    */
 #define LearningRate 0.5     /* most books suggest 0.3                        */
 #define Criteria     0.005   /* all outputs must be within this to terminate  */
-#define TestCriteria 0.15     /* all outputs must be within this to generalize */
+#define TestCriteria 0.15    /* all outputs must be within this to generalize */
 #define MaxIterate   100000  /* maximum number of iterations                */
 #define ReportIntv   101     /* print report every time this many cases done*/
 #define Momentum     0.85     /* momentum constant                             */
