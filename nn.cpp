@@ -17,7 +17,7 @@
 using namespace std;
 
 #define NumOfCols    5       /* number of layers +1  i.e, include input layer */
-#define NumOfRows    10       /* max number of rows net +1, last is bias node  */
+#define NumOfRows    10      /* max number of rows net +1, last is bias node  */
 #define NumINs       2       /* number of inputs, not including bias node     */
 #define NumOUTs      1       /* number of outputs, not including bias node    */
 #define LearningRate 0.5     /* most books suggest 0.3                        */
