@@ -27,7 +27,7 @@ using namespace std;
 #define MaxIterate   100000  /* maximum number of iterations                */
 #define ReportIntv   101     /* print report every time this many cases done*/
 #define Momentum     0.85     /* momentum constant                             */
-#define TrainCases   48      /* number of training cases        */
+#define TrainCases   49      /* number of training cases        */
 #define TestCases    10       /* number of test cases            */
 // network topology by column ------------------------------------
 #define NumNodes1    4       /* col 1 - must equal NumINs+1     */
